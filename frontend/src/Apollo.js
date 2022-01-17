@@ -7,7 +7,7 @@ const httpLink = new HttpLink({
 
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
-  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoicGFydG5lciIsInN1YiI6IjEwMDAwMDAzLWE5MGItMTFlYi1iY2JjLTAyNDJhYzEzMDAwMiIsImV4cCI6MTY0MjQ4NjU5MCwic2VzcyI6bnVsbCwiaWF0IjoxNjQyNDAwMTg5LCJhdWQiOiJwb3N0Z3JhcGhpbGUiLCJpc3MiOiJwb3N0Z3JhcGhpbGUifQ.pky5O_ZsNFZKmSoYna526KEcSD6ei-HoYcafhIgV0u8";
+  const token = process.env.REACT_APP_JWT_TOKEN
   // return the headers to the context so httpLink can read them
   return {
     headers: {
